@@ -1,0 +1,2 @@
+	
+Building on fundamentals of Object-Oriented programming, this course covers Component-based Application Development and Database Connectivity using the Java programming language. Coursework emphasizes how to create complex GUI applications with Java programming language, interacting with the databases using JDBC, and Java collections framework.
