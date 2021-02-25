@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body class="container">
+	<div class="row">
+        <div class="col-12 offset-1 pt-3 pb-3">
+			<form method="post" action="/assessment_feedbacks">
+                <input type="hidden" name="student" value="<%= studentId %>">
+                <div class="form-group row">
+                    <h1>Hello <%= studentFirstName %>,<%= studentLastName %> </h1>
+                </div>
+                <div class="form-group row">
+                    <h1><%= title %></h1>
+                </div>
+				<div class="form-group row">
+                    <label for="courseCode" class="col-2 col-form-label" style="font-weight: bold">Course Code:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="30" placeholder="Enter your course code" name="courseCode" required>
+                    </div>
+				</div>
+				<div class="form-group row">
+                    <label for="courseName" class="col-2 col-form-label" style="font-weight: bold">Course Name:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="30" placeholder="Enter your course name" name="courseName" required>
+                    </div>
+				</div>
+                <div class="form-group row">
+                    <label for="program" class="col-2 col-form-label" style="font-weight: bold">Program:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="80" placeholder="Enter your program" name="program" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="semester" class="col-2 col-form-label" style="font-weight: bold">Semester:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="80" placeholder="Enter your semester" name="semester" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="expectationClarity" class="col-2 col-form-label" style="font-weight: bold">Expectation Clarity:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="80" placeholder="Enter your expectation clarity" name="expectationClarity" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="gradingFairness" class="col-2 col-form-label" style="font-weight: bold">Grading Fairness:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="80" placeholder="Enter your grading fairness" name="gradingFairness" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="gradingFeedback" class="col-2 col-form-label" style="font-weight: bold">Grading Feedback:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="80" placeholder="Enter your grading feedback" name="gradingFeedback" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-2 col-form-label" style="font-weight: bold">Student Email:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" size="80" placeholder="Enter your email" name="email" readonly="readonly" value="<%= email %>">
+                    </div>
+                </div>
+				<div class="form-group row">
+                    <label for="eCentennialUse" class="col-2 col-form-label" style="font-weight: bold">Can I use on eCentennial?</label>
+                    <div class="col-10">
+                        <select class="form-control" name="eCentennialUse" id="eCentennialUse">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="timelyFeedback" class="col-2 col-form-label" style="font-weight: bold">Do you want to receive timely feedback?</label>
+                    <div class="col-10">
+                        <select class="form-control" name="timelyFeedback" id="timelyFeedback">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-10 offset-2">
+                        <button type="submit" class="btn btn-success btn btn-block">Submit</button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

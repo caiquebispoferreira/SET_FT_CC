@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col-12 offset-1 pt-3 pb-3">
+            <h1><%= title %></h1>
+        </div>
+        <div class="col-10 offset-1">
+          <% if(students.length != 0) { %>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Fist Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach(function(student) { %>
+                        <tr>
+                            <td><%= student.firstName %></td>
+                            <td><%= student.lastName %></td>
+                            <td><%= student.email %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+          <% } else  { %>
+                <p> No students found.</p>
+          <% }  %>
+          <footer class="text-center">
+            <hr>
+            <a href="/">Home</a>
+            <br/>
+            
+            © 2021 Copyright: Caique Ferreira 301093125		
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
