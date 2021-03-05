@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title><%= title %></title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+   </head>
+   <body>
+      <div class="row">
+         <div class="col-10 offset-1">
+            <h1 align="center">Create a Vaccine Appointment</h1>
+         </div>
+         <div class="col-10 offset-1">
+            <form action="/appointments" method="post">
+               <div class="form-group">
+                  <label>Card Number:</label>
+                  <input type="text" name="cardNumber" class="form-control"/>
+               </div>
+               <div class="form-group">
+                  <label>Vaccine Site:</label>
+                  <input type="text" name="vaccineSite" class="form-control"/>
+               </div>
+               <div class="form-group">
+                  <label>Priority Area:</label>
+                  <select class="form-control" id="priorityArea" name="priorityArea">
+                     <option>80+</option>
+                     <option>Healthcare</option>
+                     <option>Essential</option>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label>DateTime:</label>
+                  <input type="text" name="dateTime" class="form-control"/>
+               </div>
+               <div class="form-group">
+                  <label for="cancelled" >Cancelled?</label>
+                  
+                  <select class="form-control" id="cancelled" name="cancelled">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                  </select>
+                  
+               </div>
+               <div>
+                  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Add Appointment" />
+               </div>
+            </form>
+         </div>
+      </div>
+      
+   </body>
+</html>

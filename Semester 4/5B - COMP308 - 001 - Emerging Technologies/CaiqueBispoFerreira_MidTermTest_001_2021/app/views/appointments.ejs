@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title><%= title %></title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+      <style>
+         .center {
+            margin-left: auto;
+            margin-right: auto;
+            }
+      </style>
+   </head>
+   <body>
+      <div class="row">
+         <div class="col-10 offset-1">
+            <h1 align="center">Vaccine Appointments</h1>
+         </div>
+         <div class="col-10 offset-1">
+            <form method="post">
+               <table class="table center" >
+                  <tr>
+                     <th>
+                        Card Number:
+                     </th>
+                     <th>
+                        Vaccine Site:
+                     </th>
+                     <th>
+                        Priority Area:
+                     </th>
+                     <th>
+                        Date Time:
+                     </th>
+                     <th>
+                        Canceled?
+                     </th>
+                     <th>
+                        Action
+                     </th>
+                  </tr>
+                  <% appointments.forEach(function(appointment){ %>
+                  <tr>
+                     <td>
+                        <div>
+                           <input type="text" name="cardNumber" value="<%= appointment.cardNumber %>" class="form-control"/>
+                        </div>
+                     </td>
+                     <td>
+                        <input type="text" name="vaccineSite" value="<%= appointment.vaccineSite %>" class="form-control"/>
+                     </td>
+                     <td>
+                        <select class="form-control" id="priorityArea" name="priorityArea">
+                           <option <%= appointment.priorityArea == "80+" ? 'selected' : '' %> >80+</option>
+                           <option <%= appointment.priorityArea == "Healthcare" ? 'selected' : '' %>>Healthcare</option>
+                           <option <%= appointment.priorityArea == "Essential" ? 'selected' : '' %>>Essential</option>
+                        </select>
+                     </td>
+                     <td>
+                        <input type="text" name="dateTime" value="<%= appointment.dateTime.toLocaleDateString() %>" class="form-control" />
+                     </td>
+                     <td>
+                        <select class="form-control" id="cancelled" name="cancelled">
+                           <option value="true"  <%= appointment.cancelled ? 'selected' : '' %> >Yes</option>
+                           <option value="false" <%= !appointment.cancelled ? 'selected' : '' %> >No</option>
+                        </select>
+                     </td>
+                     <td>
+                        <input type="submit" class="btn btn-danger btn btn-block" formaction="/list_appointments/<%= appointment.cardNumber %>?_method=DELETE" value="Delete Appointment" style="width: 200px" />
+                     </td>
+                  </tr>
+                  <% })%>
+               </table>
+            </form>
+         </div>
+         <div class="col-10 offset-1">
+            
+            <div class="card-footer text-muted">
+               <p class="text-center">
+                  COMP308 - 001 - Emerging Technologies <br />
+                  Midterm <br />
+                  <br /> 301093125 -
+                  Caique Bispo Ferreira
+               </p>
+               
+             </div>
+         </div>
+      </div>
+   </body>
+</html>
